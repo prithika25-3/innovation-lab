@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Quantifiers specify how many times a character or group should appear.
+        let text="aabab";
+        let pattern=/\a*/g;
+        let pattern2=/\a+/g;
+        let pattern3=/\a?/g;
+        let result=text.match(pattern);
+        let result2=text.match(pattern2);
+        let result3=text.match(pattern3);
+        console.log(result)
+        console.log(result2)
+        console.log(result3)
+        // Modifiers(flags) change how regex matches.
+        //COMMON MODIFIERS
+        // i=>case insensitive
+        //g=>global match(all occurences)
+        //m=>multiline match
+        let sentence="Hai Everyone\n Hai, How about you."
+        let pattern4=/\hai+/ig;
+        let result5=sentence.match(pattern4);
+        console.log(result5);
+        // Meta characters have special meaning in regex.
+        // Common Meta Characters:
+        // .->any character except new line
+        //  \d->digit(0-9)
+        // \w->word characters(letters,digits,_)
+        let digitchar="Js001";
+        let pattern6=/\d+\w+/g;
+        let result6=digitchar.match(pattern6);
+        console.log(result6);
+        //Grouping
+        //Parentheses() are udes to group patterns and capture submatches.
+        let username="javascript programming";
+        let pattern7=/(\w+)/g;
+        let result7=username.match(pattern7);
+        console.log(result7);
+        console.log(result7[0]);
+        console.log(result7[1]);
+        let str ="Mr. bean has a grren apple and red apple";
+        const regex = /Apple/ig;
+        let result = str.replace(regex,"Strawberries");
+        console.log(result);
+    </script>
+</body>
+
+</html>
