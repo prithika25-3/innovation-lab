@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Local Storage->stores data permanently
+        //(until cleared by user and code).
+        localStorage.setItem("username","javascript");
+        localStorage.getItem("username");
+        localStorage.removeItem("username");
+        localStorage.clear();
+        //storing array value in ls:
+        //Local storage only stores strings,not arrays.
+        //We need to convert arrays into a string(using JSON.stringify)
+        // Creating an empty array
+        // let emptyArray = [];
+        // let fruits = ["Apple", "Banana", "Orange"];
+        // let numbers = [1, 2, 3, 4, 5];
+        // console.log(fruits);
+        var arr=["sadha",19,"front hand developer"];
+        localStorage.setItem("details",JSON.stringify(arr))
+        let stredarr=JSON.parse(localStorage.getItem("details"))
+        console.log(stredarr);
+        localStorage.clear()
+        //Storing an array of objects in LocalStorage
+        const person = [{
+        "name 1":"sadha",
+        "name 2":"dharsh"
+        }]
+        localStorage.setItem("persondetails",JSON.stringify(person));
+        let stredobj=JSON.parse(localStorage.getItem("persondetails"));
+        console.log(stredobj);
+        //session storage
+        //useful for temporary data
+        //(like login,session,form pogress)
+        // Store a value in sessionStorage
+sessionStorage.setItem("fruits", "apple");
+const fruit = sessionStorage.getItem("fruits");
+console.log(fruit);
+
+    
+    </script>
+</body>
+</html>
